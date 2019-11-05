@@ -4,7 +4,7 @@ import pybind11
 import os
 
 
-EXTRA_COMPILE_ARGS = ['-std=c++11']
+EXTRA_COMPILE_ARGS = ['-std=c++11', '-fvisibility=hidden']
 PWD = os.getcwd()
 EXT1_DIR = os.path.abspath(PWD + "/../ext1")
 

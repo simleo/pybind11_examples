@@ -4,7 +4,7 @@ import pybind11
 import os
 
 
-EXTRA_COMPILE_ARGS = ['-std=c++11']
+EXTRA_COMPILE_ARGS = ['-std=c++11', '-fvisibility=hidden']
 
 ext = Extension(
     "_ext1",
