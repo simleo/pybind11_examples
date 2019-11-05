@@ -40,11 +40,16 @@ $ bash build_cpp.sh
 $ ./example
 Pet(Rose)
 Rose
+Pet(Violet)
+Violet
 $ python3 setup.py build_ext
 $ python3 example.py
 Pet(Molly)
 <class '_ext1.Pet'>
 Molly
+Pet(Mick)
+<class '_ext1.Pet'>
+Mick
 ```
 
 Note that the `import _ext1` line in `example.py` is necessary. Without it,
