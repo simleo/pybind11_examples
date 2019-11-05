@@ -4,7 +4,7 @@ This example reproduces a scenario where a C++ library (`pet_user`, under
 `ext2`) uses another C++ library as a dependency (`pet`, under `ext1`). The
 `buildPet` function from `pet_user` returns a `Pet` object from `pet`. The
 example shows how to build two separate Python extensions (`_ext1` and
-`_ext2), where `_ext2.buildPet` returns an object of type `_ext1.Pet`.
+`_ext2`), where `_ext2.buildPet` returns an object of type `_ext1.Pet`.
 
 To build everything, start with the C++ library and example executable from
 `ext1`:
