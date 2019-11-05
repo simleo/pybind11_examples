@@ -46,3 +46,16 @@ Pet(Molly)
 <class '_ext1.Pet'>
 Molly
 ```
+
+Note that the `import _ext1` line in `example.py` is necessary. Without it,
+the following error occurs:
+
+```
+$ python3 example.py
+Pet(Molly)
+Traceback (most recent call last):
+  File "example.py", line 7, in <module>
+    pet = _ext2.buildPet("Molly")
+TypeError: Unable to convert function return value to a Python type! The signature was
+	(arg0: str) -> Pet
+```
