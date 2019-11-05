@@ -42,6 +42,8 @@ Pet(Rose)
 Rose
 Pet(Violet)
 Violet
+Pet(Daisy)
+Daisy
 $ python3 setup.py build_ext
 $ python3 example.py
 Pet(Molly)
@@ -50,6 +52,8 @@ Molly
 Pet(Mick)
 <class '_ext1.Pet'>
 Mick
+Pet(Ruby)
+Ruby
 ```
 
 Note that the `import _ext1` line in `example.py` is necessary. Without it,

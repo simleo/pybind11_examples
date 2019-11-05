@@ -6,4 +6,5 @@ namespace py = pybind11;
 PYBIND11_MODULE(_ext2, m) {
     m.def("buildPet", &buildPet);
     m.def("buildPetPtr", &buildPetPtr);
+    m.def("petName", &petName);
 }

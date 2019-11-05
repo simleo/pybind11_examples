@@ -7,4 +7,7 @@ int main() {
     Pet* petptr = buildPetPtr("Violet");
     std::cout << petptr->getName() << "\n";
     delete petptr;
+    Pet* p = new Pet("Daisy");
+    std::cout << petName(p) << "\n";
+    delete p;
 }
