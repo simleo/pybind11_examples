@@ -26,7 +26,7 @@ Build the Python extension (needs pybind11, `pip3 install pybind11`) and run
 the Python example.
 
 ```
-$ python3 setup.py build_ext
+$ python3 setup.py build
 $ python3 example.py
 Pet(Daisy)
 Daisy
@@ -44,7 +44,7 @@ Pet(Violet)
 Violet
 Pet(Daisy)
 Daisy
-$ python3 setup.py build_ext
+$ python3 setup.py build
 $ python3 example.py
 Pet(Molly)
 <class '_ext1.Pet'>
