@@ -20,6 +20,10 @@ Now you should have `libpet.so` and `example`.
 $ ./example
 Pet(Daisy)
 Daisy
+Pet(Ginger)
+Ginger
+Pet(Bubble)
+Bubble
 ```
 
 Build the Python extension (needs pybind11, `pip3 install pybind11`) and run
@@ -30,6 +34,9 @@ $ python3 setup.py build
 $ python3 example.py
 Pet(Daisy)
 Daisy
+Daisy
+Pet(Jumbo)
+Jumbo
 ```
 
 Now do the same in `ext2`:
@@ -47,24 +54,27 @@ Daisy
 $ python3 setup.py build
 $ python3 example.py
 Pet(Molly)
-<class '_ext1.Pet'>
+<class 'pypet._ext1.Pet'>
 Molly
 Pet(Mick)
-<class '_ext1.Pet'>
+<class 'pypet._ext1.Pet'>
 Mick
 Pet(Ruby)
 Ruby
 ```
 
-Note that the `import _ext1` line in `example.py` is necessary. Without it,
-the following error occurs:
+Note that the `import pypet._ext1` line in `example.py` is necessary. Without
+it, the following error occurs:
 
 ```
 $ python3 example.py
 Pet(Molly)
 Traceback (most recent call last):
-  File "example.py", line 7, in <module>
-    pet = _ext2.buildPet("Molly")
+  File "example.py", line 8, in <module>
+    pet = pypet_user._ext2.buildPet("Molly")
 TypeError: Unable to convert function return value to a Python type! The signature was
 	(arg0: str) -> Pet
 ```
+
+Also note that the two extension modules must be compiled with the same
+compiler version, otherwise errors like the one above will occur.
