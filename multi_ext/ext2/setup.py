@@ -9,7 +9,7 @@ PWD = os.getcwd()
 EXT1_DIR = os.path.abspath(PWD + "/../ext1")
 
 ext = Extension(
-    "_ext2",
+    "pypet_user._ext2",
     sources=["bindings.cpp"],
     include_dirs=[
         PWD, EXT1_DIR,
@@ -25,6 +25,7 @@ ext = Extension(
 
 
 setup(
-    name="ext2",
+    name="pypet_user",
+    packages=["pypet_user"],
     ext_modules=[ext]
 )

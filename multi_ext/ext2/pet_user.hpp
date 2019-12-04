@@ -2,5 +2,5 @@
 #include <string>
 
 Pet buildPet(std::string name);
-Pet* buildPetPtr(std::string name);
-std::string petName(Pet* p);
+pptr buildPetPtr(std::string name);
+std::string petName(pptr p);

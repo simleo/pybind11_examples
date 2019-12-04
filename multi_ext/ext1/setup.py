@@ -7,7 +7,7 @@ import os
 EXTRA_COMPILE_ARGS = ['-std=c++11', '-fvisibility=hidden']
 
 ext = Extension(
-    "_ext1",
+    "pypet._ext1",
     sources=["bindings.cpp"],
     include_dirs=[
         os.getcwd(),
@@ -23,6 +23,7 @@ ext = Extension(
 
 
 setup(
-    name="ext1",
+    name="pypet",
+    packages=["pypet"],
     ext_modules=[ext]
 )
