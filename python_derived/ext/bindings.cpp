@@ -8,7 +8,7 @@ PYBIND11_MODULE(_ext1, m) {
 	.def(py::init<>())
         .def(py::init<const std::string &>())
         .def("getName", &Pet::getName);
-    py::class_<PetUser>(m, "PetUser")
+    py::class_<PetUser>(m, "PetUser", py::dynamic_attr())
 	.def_readwrite("pet", &PetUser::pet)
 	.def(py::init<>())
         .def("setPet", &PetUser::setPet);
