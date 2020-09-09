@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 class Pet {
 public:
@@ -11,7 +12,6 @@ public:
 
 class PetUser {
 public:
-    Pet* pet;
+    std::vector<Pet*> pets;
     PetUser();
-    void setPet(Pet* pet);
 };

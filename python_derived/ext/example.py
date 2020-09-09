@@ -19,13 +19,14 @@ print(daisy.getName())
 
 print()
 pu1 = pypet._ext1.PetUser()
-pu1.pet = daisy
-print(pu1.pet)
+pu1.pets = [daisy]
+print(pu1.pets[0])
 
 print()
-molly = Derived('Molly')
+molly = Derived("Molly")
 pu2 = pypet._ext1.PetUser()
-pu2.pet = molly
+print(molly)
 print(molly.getName())
-print(pu2.pet)
-print(pu2.pet.getName())
+pu2.pets = [molly]
+print(pu2.pets[0])
+print(pu2.pets[0].getName())
