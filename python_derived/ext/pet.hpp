@@ -5,12 +5,13 @@ public:
     std::string name;
     Pet();
     Pet(const std::string &name);
-    std::string getName();
+    virtual ~Pet() {}  
+    virtual std::string getName();
 };
 
 class PetUser {
 public:
-    Pet pet;
+    Pet* pet;
     PetUser();
-    void setPet(const Pet& pet);
+    void setPet(Pet* pet);
 };

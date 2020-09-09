@@ -18,6 +18,6 @@ std::string Pet::getName() {
 PetUser::PetUser() {
 }
 
-void PetUser::setPet(const Pet& pet_) {
+void PetUser::setPet(Pet* pet_) {
     pet = pet_;
 }
