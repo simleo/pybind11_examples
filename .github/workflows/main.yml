@@ -25,4 +25,4 @@ jobs:
         run: flake8 --ignore=E402,E301 -v .
       - name: test on-tag event
         if: startsWith(github.ref, 'refs/tags')
-        run: echo "running a tagged event"
+        run: echo "running a tagged event, lorem ipsum"
