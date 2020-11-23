@@ -23,4 +23,4 @@ jobs:
         run: flake8 --ignore=E402,E301 -v .
       - name: test on-tag event
         if: startsWith(github.event.ref, 'refs/tags')
-        run: echo "running tagged event"
+        run: echo "running a tagged event"
