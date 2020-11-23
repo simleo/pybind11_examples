@@ -20,4 +20,4 @@ jobs:
           pip install wheel
           pip install flake8
       - name: lint with flake8
-        run: flake8 --ignore=E402,E301 -v .
+        run: python -m flake8 --ignore=E402,E301 -v .
