@@ -1,0 +1,22 @@
+name: main
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches-ignore:
+      - gh-pages
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade setuptools
+          pip install flake8
+      - name: lint with flake8
+        run: flake8 --ignore=E402,E301 -v .
