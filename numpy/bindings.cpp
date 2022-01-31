@@ -43,7 +43,13 @@ Tensor* create(const std::vector<int>& shape) {
 PYBIND11_MODULE(_ext, m) {
     py::class_<Tensor>(m, "Tensor")
 	.def(py::init<const std::vector<int>&>())
-	.def("info", &Tensor::info);
+	.def("info", &Tensor::info)
+        .def("type", [](Tensor &t) -> std::string {
+		return typeid(t).name();
+	    }, "")
+        .def("typehash", [](Tensor &t) -> std::size_t {
+		return typeid(t).hash_code();
+	    }, "");
     m.def("create", [](py::array_t<float, py::array::c_style | py::array::forcecast> array) -> class Tensor* {
         py::buffer_info info = array.request();
         std::vector<int> shape(info.shape.begin(), info.shape.end());
