@@ -8,7 +8,7 @@ from pypet._ext1 import Pet
 class Turtle(Pet):
 
     def __init__(self, name):
-        super().__init__(name)
+        Pet.__init__(self, name)
 
     def getName(self):
         return("_" + self.name)
