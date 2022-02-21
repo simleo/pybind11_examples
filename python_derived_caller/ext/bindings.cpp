@@ -1,5 +1,4 @@
 #include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
 #include "pet.hpp"
 
 namespace py = pybind11;
@@ -11,7 +10,4 @@ PYBIND11_MODULE(_ext1, m) {
         .def(py::init<const std::string &>())
         .def("getName", &Pet::getName)
         .def("getNameCaller", &Pet::getNameCaller);
-    py::class_<PetUser>(m, "PetUser", py::dynamic_attr())
-	.def_readwrite("pets", &PetUser::pets)
-	.def(py::init<>());
 }

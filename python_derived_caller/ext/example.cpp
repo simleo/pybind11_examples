@@ -1,25 +1,19 @@
 #include <iostream>
-#include <vector>
 #include "pet.hpp"
 
-class Derived : public Pet {
+class Turtle : public Pet {
 public:
-    Derived(const std::string &name) : Pet(name) {}
+    Turtle(const std::string &name) : Pet(name) {}
     std::string getName() {
-	std::cout << "  this is getName from Derived\n";
-	return name;
+	return "_" + name;
     }
 };
 
 int main() {
     Pet daisy("Daisy");
-    std::cout << daisy.getName() << "\n";
-    std::cout << daisy.getNameCaller() << "\n";
-    // PetUser pet_user;
-    // pet_user.pets = std::vector<Pet*>({&daisy});
-    // std::cout << pet_user.pets[0]->name << "\n";
-
-    Derived molly("Molly");
-    std::cout << molly.getName() << "\n";
-    std::cout << molly.getNameCaller() << "\n";
+    std::cout << "Pet.getName(): " << daisy.getName() << "\n";
+    std::cout << "Pet.getNameCaller(): " << daisy.getNameCaller() << "\n";
+    Turtle molly("Molly");
+    std::cout << "Turtle.getName(): " << molly.getName() << "\n";
+    std::cout << "Turtle.getNameCaller(): " << molly.getNameCaller() << "\n";
 }
